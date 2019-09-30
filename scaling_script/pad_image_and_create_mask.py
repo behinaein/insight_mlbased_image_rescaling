@@ -23,20 +23,13 @@ def mask_pad_generator(image_file, top, bottom, left, right, output_folder=None)
     new_height = height + top + bottom
     new_width = width + right + left 
     diff = new_height - new_width
+    
     # add extra pad to make the image square so it is not distorted in resizing
     if diff > 0:
-        # extra_padding_right = diff//2 
-        # extra_padding_left = diff//2 if diff%2 == 0 else diff//2 + 1
-        # right += extra_padding_right
-        # left += extra_padding_left
         new_width += diff
         right += diff
     elif diff < 0:
         diff = -diff
-        # extra_padding_top = diff//2 
-        # extra_padding_bottom = diff//2 if diff%2 == 0 else diff//2 + 1
-        # top += extra_padding_top
-        # bottom += extra_padding_bottom
         new_height += diff
         bottom += diff
 
@@ -62,10 +55,11 @@ def mask_pad_generator(image_file, top, bottom, left, right, output_folder=None)
 
 
 if __name__ == '__main__':
+
     # read the required arguments from input
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '-i', '--image', default='/home/beh/Desktop/temp/images_rescaled/sample2/original.png',
+        '-i', '--image', default='original.png',
         help='Select an input image.')
     parser.add_argument(
         '-t', '--top', default=0, type=int,

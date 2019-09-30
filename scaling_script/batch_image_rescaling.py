@@ -92,13 +92,14 @@ def clean():
 
 
 if __name__ == '__main__':
+
     # read the required parameter from the command line
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '-i', '--image_dir', default='/home/beh/Desktop/temp/images_rescaled/sample2/original.png',
+        '-i', '--image_dir', default='original.png',
         help='Select an input image dir')
     parser.add_argument(
-        '-m', '--model', default="model_places2.pth",
+        '-m', '--model', default="default_model.pth",
         help='DNF model.')
     parser.add_argument(
         '-t', '--top', default=0, type=int,
