@@ -1,6 +1,13 @@
-##########################
-### Adopted from https://github.com/hughplay/DFNet
-############################
+##########################################
+##########################################
+##########################################
+##
+## The following program is forked from
+## https://github.com/hughplay/DFNet
+## 
+##########################################
+##########################################
+##########################################
 
 from collections import defaultdict
 from itertools import islice
@@ -14,11 +21,11 @@ import numpy as np
 import torch
 import tqdm
 
-from dfnet.utils import list2nparray, gen_miss, merge_imgs
-from dfnet.model import DFNet
+from utils_dfn.dfnet.utils import list2nparray, gen_miss, merge_imgs
+from utils_dfn.dfnet.model import DFNet
 
 
-class Tester:
+class RunModel:
 
     def __init__(self, model_path, input_size, batch_size):
         self.model_path = model_path
@@ -262,6 +269,6 @@ if __name__ == '__main__':
         help='Whether merge input and results for better viewing.')
 
     args = parser.parse_args()
-    tester = Tester(args.model, args.input_size, args.batch_size)
+    run_model = RunModel(args.model, args.input_size, args.batch_size)
 
-    tester.inpaint(args.output, args.img, args.mask, merge_result=args.merge)
+    run_model.inpaint(args.output, args.img, args.mask, merge_result=args.merge)

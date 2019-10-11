@@ -1,7 +1,3 @@
-A web applicaton for rescaling images.
+# Smart Sacler-Fill the Gap with AI
 
-To run the model in a console window type
-
-```
-python mainApp.py
-```
+This is the application.

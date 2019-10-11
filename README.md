@@ -1,17 +1,31 @@
-# Changing the aspect ratio of an image using Deep Neural Networks
+# Smart Scaler-Paint the gap with AI
 
-Images are created in differet sizes and aspect ratio. Altering the aspect ratio of an image leads to deformation of the objects in the image. To overcome this problem, different methods have been proposed. We use a deep learning approach to change the aspec ration of an image while keeping the main objects of the original image unchanged.
-
-## Proposed method
-We use a DFNet work to rescale images (change size and aspect ratio). The code for DFNet is adopted from
-
-```
-https://github.com/hughplay/DFNet
-```
-
-The folder "InteliMageResizingApp" contains the web app for the rescaling images
-
-The rescalig files and model can be found in "scaling_script" folder
+This work is done in collaboration with [Kurbric](http://kubric.io).
 
 
-    
+Images are created in various sizes and aspect ratios. However, there are cases
+that we need to fit an image in a placer holder that have different size and/or aspect ratio.
+Resizing without changing the aspect ratio will not distort the objects in the image, but if 
+one changes the aspect ratio, the main objects may become distorted. For example, suppose we
+have the following image.
+
+![salad](./images/salad.png)
+
+and we would like to fit this image into the following placeholder.
+
+![placeholder](./images/placeholder.png)
+
+If we use a simple stretching approach, we would 
+get the following image
+
+![simple_stretch](./images/salad_simple_stretch.png)
+
+As can be seen from the above image the bowl of salad has be distorted, which is not acceptabl
+for some businesses. So, a more sophisticated method is needed. [Seam Carving](https://en.wikipedia.org/wiki/Seam_carving)
+is a method that can be use for resacling images. However, for the pictures that have very 
+small are around the main objects, it does not work very well.
+
+
+
+
+

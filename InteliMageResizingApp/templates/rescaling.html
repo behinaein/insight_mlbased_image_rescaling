@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Smart Rescaler - Paint the gap with AI</title>
+  <title>Grayscale - Start Bootstrap Theme</title>
 
   <!-- Bootstrap core CSS -->
   <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="rescaling.html">Image Rescaling</a>
+            <a class="nav-link js-scroll-trigger" href="#projects">Image Rescaling</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
@@ -59,17 +59,64 @@
     </div>
   </nav>
 
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Smart Scaler</h1>
-        <h2 class="text-white-50 mx-auto my-2 mt-2 mb-5">Paint the gaps with AI.</h2>
-        <a href="rescaling.html" class="btn btn-primary js-scroll-trigger">Get Started</a>
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section bg-light">
+    <a name="projects_anchor"></a>)
+    <div class="container">
+      <!-- First row, input image, buttom, output image -->
+      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+        <div class="col-lg-5">
+          <img class="img-fluid mb-3 mb-lg-0" src={{input_image}} height="400" width="400" alt="">
+        </div>
+        <div class="col-sm-2">
+          <div class="row align-items-center">
+            <div class="form-group">
+              <form method="POST" action="/convert_image">
+                <label>New width</label>
+                <input type="input" size="10" class="form-control" name="width_size_input" placeholder="new width">
+                <label>New height</label>
+                <input type="input" size="10" class="form-control" name="height_size_input" placeholder="new height">
+                <input type="submit" class="btn btn-secondary  btn mb-5" value=Rescale>
+              </form>
+            </div>
+          </div>
+        </div>
+          <div class="col-lg-5">
+            <img class="img-fluid mb-3 mb-lg-0" src={{output_image}} height="400" width="400" alt="">
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
+      <!-- Second row, upload files-->
 
+      <!-- drag and drop-->
+      <div class="container">
+        <div class="row align-items-left no-gutters mb-4 mb-lg-5">
+          <div class="col-xl-4">
+            <div class="panel panel-default">
+              <div class="panel-heading"><strong>Upload Files</strong> <small>Uplaod your image here</small></div>
+              <div class="panel-body">
+
+                <!-- Standar Form -->
+                <h4>Select files from your computer</h4>
+                <form action="rescaling.html" method="post" enctype="multipart/form-data" id="js-upload-form">
+                  <div class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="file" id="js-upload-files" multiple>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+                  </div>
+                </form>
+                <!-- Drop Zone -->
+                <h4>Or drag and drop files below</h4>
+                <div class="upload-drop-zone" id="drop-zone">
+                  Just drag and drop files here
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /container -->
+  </section>
   <!-- Contact Section -->
   <section class="contact-section bg-black">
     <div class="container">
@@ -106,7 +153,7 @@
               <i class="fas fa-mobile-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Phone</h4>
               <hr class="my-4">
-              <div class="small text-black-50"> (XXX) XXX-XXXX </div>
+              <div class="small text-black-50">(XXX) XXX-XXXX</div>
             </div>
           </div>
         </div>
@@ -144,6 +191,8 @@
   <!-- Custom scripts for this template -->
   <script src="static/js/grayscale.min.js"></script>
 
+  <!-- Custom scripts for drag and drop-->
+  <!-- <script src="static/js/drag_drop.js"></script> -->
 
 </body>
 

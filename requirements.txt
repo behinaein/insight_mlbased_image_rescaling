@@ -1,0 +1,8 @@
+flask
+torch
+torchvision
+opencv-python
+tqdm
+argparse
+numpy
+werkzeug
