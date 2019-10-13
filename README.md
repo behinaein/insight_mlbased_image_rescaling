@@ -13,7 +13,7 @@ have the following image.
 
 and we would like to fit this image into the following placeholder.
 
-<p align="center"><div style="text-align:center"><img src="images/placeholder.png" width="500" height="300" alt="placeholder" /></p>
+<p align="center"><img src="images/placeholder.png" width="500" height="300" alt="placeholder" /></p>
  
 If we use a simple stretching approach, we would get the following image
 
